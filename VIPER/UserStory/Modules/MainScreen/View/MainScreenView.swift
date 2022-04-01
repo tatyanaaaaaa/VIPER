@@ -22,6 +22,9 @@ protocol MainScreenViewInput: AnyObject {
     
     /// Показать новый экран
     func changeBackgroundColor()
+    
+    /// Устанавливает текст
+    func setTitle(text: String)
 }
 
 /// View для экрана MainScreenView
@@ -34,6 +37,7 @@ final class MainScreenView: UIView, MainScreenViewInput {
     // MARK: - Private properties
     
     private let presentNewScreenButton = UIButton()
+    private let titleLable = UILabel()
     
     // MARK: - Init
     
@@ -60,26 +64,44 @@ final class MainScreenView: UIView, MainScreenViewInput {
                                   alpha: 1)
     }
     
+    /// Устанавливает текст
+    public func setTitle(text: String) {
+        titleLable.text = text
+    }
+    
     // MARK: - Private func
     
     private func setupConstraints() {
-        [presentNewScreenButton].forEach {
+        [presentNewScreenButton, titleLable].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             addSubview($0)
         }
         
         NSLayoutConstraint.activate([
+            titleLable.centerXAnchor.constraint(equalTo: centerXAnchor),
+            titleLable.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -Appearance().padding),
+            
             presentNewScreenButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             presentNewScreenButton.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
     
     private func setDefaultsSettings() {
-        presentNewScreenButton.setTitle("Перейти на новый экран", for: .normal)
+        presentNewScreenButton.setTitle(Appearance().buttonTitle, for: .normal)
+        presentNewScreenButton.setTitleColor(.blue, for: .normal)
         presentNewScreenButton.addTarget(self, action: #selector(presentNewScreenButtonAction), for: .touchUpInside)
     }
     
     @objc private func presentNewScreenButtonAction() {
         output?.presentNewScreenButtonAction()
+    }
+}
+
+// MARK: - Appearance
+
+private extension MainScreenView {
+    struct Appearance {
+        let padding: CGFloat = 50
+        let buttonTitle = "Нажми, чтобы изменить цвет фона"
     }
 }
