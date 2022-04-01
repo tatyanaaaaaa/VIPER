@@ -13,6 +13,7 @@
 		6C28151327F7B26F00E3A926 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C28151127F7B26F00E3A926 /* Main.storyboard */; };
 		6C28151527F7B26F00E3A926 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C28151427F7B26F00E3A926 /* Assets.xcassets */; };
 		6C28151827F7B26F00E3A926 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C28151627F7B26F00E3A926 /* LaunchScreen.storyboard */; };
+		6C28152727F7B3DD00E3A926 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C28152627F7B3DD00E3A926 /* MainScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		6C28151427F7B26F00E3A926 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6C28151727F7B26F00E3A926 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C28151927F7B26F00E3A926 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C28152627F7B3DD00E3A926 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		6C28150A27F7B26F00E3A926 /* VIPER */ = {
 			isa = PBXGroup;
 			children = (
+				6C28151F27F7B36300E3A926 /* UserStory */,
 				6C28150B27F7B26F00E3A926 /* AppDelegate.swift */,
 				6C28150D27F7B26F00E3A926 /* SceneDelegate.swift */,
 				6C28150F27F7B26F00E3A926 /* ViewController.swift */,
@@ -65,6 +68,62 @@
 				6C28151927F7B26F00E3A926 /* Info.plist */,
 			);
 			path = VIPER;
+			sourceTree = "<group>";
+		};
+		6C28151F27F7B36300E3A926 /* UserStory */ = {
+			isa = PBXGroup;
+			children = (
+				6C28152027F7B37900E3A926 /* Modules */,
+			);
+			path = UserStory;
+			sourceTree = "<group>";
+		};
+		6C28152027F7B37900E3A926 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				6C28152127F7B38700E3A926 /* MainScreen */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		6C28152127F7B38700E3A926 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				6C28152527F7B3B400E3A926 /* View */,
+				6C28152427F7B3AA00E3A926 /* Presenter */,
+				6C28152327F7B3A400E3A926 /* Interactor */,
+				6C28152227F7B39C00E3A926 /* Assembly */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		6C28152227F7B39C00E3A926 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		6C28152327F7B3A400E3A926 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		6C28152427F7B3AA00E3A926 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		6C28152527F7B3B400E3A926 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6C28152627F7B3DD00E3A926 /* MainScreenView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +200,7 @@
 				6C28151027F7B26F00E3A926 /* ViewController.swift in Sources */,
 				6C28150C27F7B26F00E3A926 /* AppDelegate.swift in Sources */,
 				6C28150E27F7B26F00E3A926 /* SceneDelegate.swift in Sources */,
+				6C28152727F7B3DD00E3A926 /* MainScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,9 +352,9 @@
 				INFOPLIST_FILE = VIPER/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +364,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -320,9 +380,9 @@
 				INFOPLIST_FILE = VIPER/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -332,7 +392,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
