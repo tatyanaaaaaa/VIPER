@@ -30,7 +30,7 @@ protocol MainScreenViewInput: AnyObject {
 /// View для экрана MainScreenView
 final class MainScreenView: UIView, MainScreenViewInput {
     
-    // MARK: - Public properties
+    // MARK: - Internal properties
     
     weak var output: MainScreenViewOutput?
     
