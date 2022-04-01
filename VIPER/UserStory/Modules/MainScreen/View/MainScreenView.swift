@@ -7,14 +7,14 @@
 
 import UIKit
 
-/// Обработчик событий от view модуля SBPBeneficiaryBankScreenView
+/// Обработчик событий от view
 protocol MainScreenViewOutput: AnyObject {
     
     /// Кнопка была нажаты пользователем
     func presentNewScreenButtonAction()
 }
 
-/// View для экрана SBPBeneficiaryBankScreenView
+/// View для экрана MainScreenView
 protocol MainScreenViewInput: AnyObject {
     
     /// Обработчик событий от view экрана MainScreenView
