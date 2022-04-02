@@ -16,6 +16,7 @@
 		6C28152927F7B8B400E3A926 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C28152827F7B8B400E3A926 /* MainScreenViewController.swift */; };
 		6C28152B27F7BABC00E3A926 /* MainScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C28152A27F7BABC00E3A926 /* MainScreenInteractor.swift */; };
 		6C28152E27F7BCE600E3A926 /* MainScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C28152D27F7BCE600E3A926 /* MainScreenAssembly.swift */; };
+		6C6295E527F841FF00F573FD /* MainScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6295E427F841FF00F573FD /* MainScreenFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		6C28152827F7B8B400E3A926 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		6C28152A27F7BABC00E3A926 /* MainScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenInteractor.swift; sourceTree = "<group>"; };
 		6C28152D27F7BCE600E3A926 /* MainScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenAssembly.swift; sourceTree = "<group>"; };
+		6C6295E427F841FF00F573FD /* MainScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				6C28152827F7B8B400E3A926 /* MainScreenViewController.swift */,
+				6C6295E627F8422100F573FD /* Models */,
+				6C6295E327F841ED00F573FD /* Factory */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -130,6 +134,21 @@
 				6C28152627F7B3DD00E3A926 /* MainScreenView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		6C6295E327F841ED00F573FD /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				6C6295E427F841FF00F573FD /* MainScreenFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		6C6295E627F8422100F573FD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C28152E27F7BCE600E3A926 /* MainScreenAssembly.swift in Sources */,
+				6C6295E527F841FF00F573FD /* MainScreenFactory.swift in Sources */,
 				6C28152927F7B8B400E3A926 /* MainScreenViewController.swift in Sources */,
 				6C28150C27F7B26F00E3A926 /* AppDelegate.swift in Sources */,
 				6C28150E27F7B26F00E3A926 /* SceneDelegate.swift in Sources */,

@@ -37,6 +37,6 @@ final class MainScreenInteractor: MainScreenInteractorInput {
 
 private extension MainScreenInteractor {
     struct Appearance {
-        let someText = "Hello, world"
+        let someText = "world"
     }
 }

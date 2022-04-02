@@ -12,11 +12,12 @@ public final class MainScreenAssembly {
     
     /// Собирает экран
     /// - Returns: собранный модуль
-    public static func createModule() -> UIViewController {
+    public static func createModule() -> MainScreenModule {
         
         let interactor = MainScreenInteractor()
         let presenter = MainScreenViewController(interactor: interactor,
-                                                 viewAssembly: { MainScreenView() })
+                                                 viewAssembly: { MainScreenView() },
+                                                 factory: MainScreenFactory())
         interactor.output = presenter
         return presenter
     }
