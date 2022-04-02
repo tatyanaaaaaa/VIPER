@@ -7,19 +7,19 @@
 
 import UIKit
 
-/// Интерактор `Главный экран`
-protocol MainScreenInteractorInput {
-    
-    /// Загрузить контент
-    func getContent()
-}
-
 /// Обработчик событий от интерактора
 protocol MainScreenInteractorOutput: AnyObject {
     
     /// `Были получены данные`
     /// - Parameter text: текст
     func didReceive(text: String)
+}
+
+/// Интерактор `Главный экран`
+protocol MainScreenInteractorInput {
+    
+    /// Загрузить контент
+    func getContent()
 }
 
 /// Интерактор `Экрана выбора банка получателя`
