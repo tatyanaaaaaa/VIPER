@@ -7,9 +7,6 @@
 
 import UIKit
 
-/// Собран модуль `Главного экрана`
-public typealias MainScreenModule = UIViewController & MainScreenModuleInput
-
 /// Обработчик событий от `Главного экрана`
 public protocol MainScreenModuleOutput: AnyObject {
     
@@ -25,6 +22,9 @@ public protocol MainScreenModuleInput {
     /// Обработчик событий от `Главного экрана`
     var moduleOutput: MainScreenModuleOutput? { get set }
 }
+
+/// Готовый модуль `Главного экрана`
+public typealias MainScreenModule = UIViewController & MainScreenModuleInput
 
 /// Главный экран
 final class MainScreenViewController: MainScreenModule {

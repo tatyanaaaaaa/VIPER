@@ -122,7 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				6C6295E727F84C6600F573FD /* MainScreenViewController.swift */,
-				6C6295E627F8422100F573FD /* Models */,
 				6C6295E327F841ED00F573FD /* Factory */,
 			);
 			path = Presenter;
@@ -142,13 +141,6 @@
 				6C6295E427F841FF00F573FD /* MainScreenFactory.swift */,
 			);
 			path = Factory;
-			sourceTree = "<group>";
-		};
-		6C6295E627F8422100F573FD /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
