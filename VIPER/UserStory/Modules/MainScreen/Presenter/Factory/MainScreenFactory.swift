@@ -11,6 +11,8 @@ import UIKit
 protocol MainScreenFactoryOutput: AnyObject {
     
     /// Был получен готовый текст
+    /// - Parameters:
+    /// - text: готовый, сформированный `текст`
     func didReciveFull(text: String)
 }
 
@@ -19,8 +21,8 @@ protocol MainScreenFactoryInput {
     
     /// Создает секции для отображения
     /// - Parameters:
-    ///   - output: output `SBPBeneficiaryBankScreenOutput`
-    ///   - model: модель `SBPBeneficiaryBankScreenModel`
+    ///   - text: `вторая часть готового текста`
+    ///   - output: output `MainScreenFactoryOutput`
     /// - Returns: секции
     func createTitle(text: String, output: MainScreenFactoryOutput)
 }

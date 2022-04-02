@@ -7,27 +7,29 @@
 
 import UIKit
 
-/// Обработчик событий от view
+/// Обработчик событий от `View`
 protocol MainScreenViewOutput: AnyObject {
     
-    /// Кнопка была нажаты пользователем
+    /// Кнопка была нажата пользователем
     func presentNewScreenButtonAction()
 }
 
-/// View для экрана MainScreenView
+/// `View для экрана MainScreenView`
 protocol MainScreenViewInput: AnyObject {
     
     /// Обработчик событий от view экрана MainScreenView
     var output: MainScreenViewOutput? { get set }
     
-    /// Показать новый экран
+    /// Изменить цвет фона на Рандомный
     func changeBackgroundColor()
     
     /// Устанавливает текст
+    /// - Parameters:
+    ///   - text: текс для `titleLable`
     func setTitle(text: String)
 }
 
-/// View для экрана MainScreenView
+/// `View для экрана MainScreenView`
 final class MainScreenView: UIView, MainScreenViewInput {
     
     // MARK: - Internal properties
