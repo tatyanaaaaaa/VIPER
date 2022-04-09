@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// Обработчик событий от `Главного Экрана`
+/// события которые отправляем из Factory в Presenter
 protocol MainScreenFactoryOutput: AnyObject {
     
     /// Был получен готовый текст
@@ -16,22 +16,28 @@ protocol MainScreenFactoryOutput: AnyObject {
     func didReciveFull(text: String)
 }
 
-/// Фабрика элментов `Главного Экрана`
+/// события которые отправляем от Presenter к Factory
 protocol MainScreenFactoryInput {
+    
+    /// OUTPUT прокидывает события в PRESENTER
+    var output: MainScreenFactoryOutput? { get set }
     
     /// Создает секции для отображения
     /// - Parameters:
     ///   - text: `вторая часть готового текста`
     ///   - output: output `MainScreenFactoryOutput`
     /// - Returns: секции
-    func createTitle(text: String, output: MainScreenFactoryOutput)
+    func createTitle(text: String)
 }
 
 /// Фабрика элментов `Главного Экрана`
 final class MainScreenFactory: MainScreenFactoryInput {
-    func createTitle(text: String, output: MainScreenFactoryOutput) {
+    
+    weak var output: MainScreenFactoryOutput?
+    
+    func createTitle(text: String) {
         let fullText = "\(Appearance().title), \(text)"
-        output.didReciveFull(text: fullText)
+        output?.didReciveFull(text: fullText)
     }
 }
 

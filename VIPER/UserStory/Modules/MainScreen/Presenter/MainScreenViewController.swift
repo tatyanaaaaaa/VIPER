@@ -7,7 +7,8 @@
 
 import UIKit
 
-/// Обработчик событий от `Главного экрана`
+// Нам пока это не надо 🔴 👇
+/// события которые отправляем `из текущего модуля в другой модуль`
 public protocol MainScreenModuleOutput: AnyObject {
     
     /// Пользователь нажал `Изменить цвет экрана`
@@ -16,40 +17,42 @@ public protocol MainScreenModuleOutput: AnyObject {
     func userPressedChange(color: UIColor?)
 }
 
-/// `Модуль главного экрана`
+/// события которые принимаем `из другого модуля в текущий`
 public protocol MainScreenModuleInput {
     
     /// Обработчик событий от `Главного экрана`
     var moduleOutput: MainScreenModuleOutput? { get set }
 }
+// Нам пока это не надо 🔴 👆
 
 /// Готовый модуль `Главного экрана`
 public typealias MainScreenModule = UIViewController & MainScreenModuleInput
 
 /// Главный экран
-final class MainScreenViewController: MainScreenModule {
+final class MainScreenViewController: UIViewController, MainScreenModuleInput {
     
     // MARK: - Public property
     
+    // Нам пока это не надо 🔴 👇
     public weak var moduleOutput: MainScreenModuleOutput?
+    // Нам пока это не надо 🔴 👆
     
     // MARK: - Private property
     
     private let interactor: MainScreenInteractorInput
-    private let viewAssembly: () -> UIView & MainScreenViewInput
-    private lazy var moduleView: UIView & MainScreenViewInput = viewAssembly()
+    private let moduleView: UIView & MainScreenViewInput
     private let factory: MainScreenFactoryInput
     
     /// Инициализатор
     /// - Parameters:
     ///   - interactor: интерактор
-    ///   - viewAssembly: вью
+    ///   - moduleView: вью
     ///   - factory: фабрика
     init(interactor: MainScreenInteractorInput,
-         viewAssembly: @escaping () -> UIView & MainScreenViewInput,
+         moduleView: UIView & MainScreenViewInput,
          factory: MainScreenFactoryInput) {
         self.interactor = interactor
-        self.viewAssembly = viewAssembly
+        self.moduleView = moduleView
         self.factory = factory
         super.init(nibName: nil, bundle: nil)
     }
@@ -67,7 +70,6 @@ final class MainScreenViewController: MainScreenModule {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        moduleView.output = self
         interactor.getContent()
         title = Appearance().title
     }
@@ -77,7 +79,7 @@ final class MainScreenViewController: MainScreenModule {
 
 extension MainScreenViewController: MainScreenInteractorOutput {
     func didReceive(text: String) {
-        factory.createTitle(text: text, output: self)
+        factory.createTitle(text: text)
     }
 }
 

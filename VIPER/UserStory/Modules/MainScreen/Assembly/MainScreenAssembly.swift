@@ -12,16 +12,21 @@ public final class MainScreenAssembly {
     
     /// Собирает экран
     /// - Returns: собранный модуль
-    public static func createModule() -> MainScreenModule {
+    public func createModule() -> MainScreenModule {
         
         let interactor = MainScreenInteractor()
         let view = MainScreenView()
         let factory = MainScreenFactory()
         
         let presenter = MainScreenViewController(interactor: interactor,
-                                                 viewAssembly: { view },
+                                                 moduleView: view,
                                                  factory: factory)
+        
+        
+        // Паттерн "Делегат", PRESENTER будет принимать события через OUTPUT от `view`, `interactor` и `factory`
+        view.output = presenter
         interactor.output = presenter
+        factory.output = presenter
         return presenter
     }
 }

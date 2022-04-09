@@ -45,6 +45,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C23740127F9D7E1008A98D0 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				6C28150B27F7B26F00E3A926 /* AppDelegate.swift */,
+				6C28150D27F7B26F00E3A926 /* SceneDelegate.swift */,
+				6C28151127F7B26F00E3A926 /* Main.storyboard */,
+				6C28151427F7B26F00E3A926 /* Assets.xcassets */,
+				6C28151627F7B26F00E3A926 /* LaunchScreen.storyboard */,
+				6C28151927F7B26F00E3A926 /* Info.plist */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
 		6C2814FF27F7B26F00E3A926 = {
 			isa = PBXGroup;
 			children = (
@@ -64,13 +77,8 @@
 		6C28150A27F7B26F00E3A926 /* VIPER */ = {
 			isa = PBXGroup;
 			children = (
+				6C23740127F9D7E1008A98D0 /* System */,
 				6C28151F27F7B36300E3A926 /* UserStory */,
-				6C28150B27F7B26F00E3A926 /* AppDelegate.swift */,
-				6C28150D27F7B26F00E3A926 /* SceneDelegate.swift */,
-				6C28151127F7B26F00E3A926 /* Main.storyboard */,
-				6C28151427F7B26F00E3A926 /* Assets.xcassets */,
-				6C28151627F7B26F00E3A926 /* LaunchScreen.storyboard */,
-				6C28151927F7B26F00E3A926 /* Info.plist */,
 			);
 			path = VIPER;
 			sourceTree = "<group>";
@@ -97,6 +105,7 @@
 				6C28152527F7B3B400E3A926 /* View */,
 				6C28152427F7B3AA00E3A926 /* Presenter */,
 				6C28152327F7B3A400E3A926 /* Interactor */,
+				6C6295E327F841ED00F573FD /* Factory */,
 				6C28152227F7B39C00E3A926 /* Assembly */,
 			);
 			path = MainScreen;
@@ -122,7 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				6C6295E727F84C6600F573FD /* MainScreenViewController.swift */,
-				6C6295E327F841ED00F573FD /* Factory */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -369,7 +377,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 34VDSPZYU9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = VIPER/Info.plist;
+				INFOPLIST_FILE = VIPER/System/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -397,7 +405,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 34VDSPZYU9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = VIPER/Info.plist;
+				INFOPLIST_FILE = VIPER/System/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

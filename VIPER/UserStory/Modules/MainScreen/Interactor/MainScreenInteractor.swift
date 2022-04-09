@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// Обработчик событий от интерактора
+/// события которые отправляем из Interactor в Presenter
 protocol MainScreenInteractorOutput: AnyObject {
     
     /// `Были получены данные`
@@ -15,8 +15,11 @@ protocol MainScreenInteractorOutput: AnyObject {
     func didReceive(text: String)
 }
 
-/// Интерактор `Главный экран`
+/// события которые отправляем от Presenter к Interactor
 protocol MainScreenInteractorInput {
+    
+    /// OUTPUT прокидывает события в PRESENTER
+    var output: MainScreenInteractorOutput? { get set }
     
     /// Загрузить контент
     func getContent()
@@ -28,8 +31,7 @@ final class MainScreenInteractor: MainScreenInteractorInput {
     weak var output: MainScreenInteractorOutput?
     
     func getContent() {
-        let appearance = Appearance()
-        output?.didReceive(text: appearance.someText)
+        output?.didReceive(text: Appearance().someText)
     }
 }
 

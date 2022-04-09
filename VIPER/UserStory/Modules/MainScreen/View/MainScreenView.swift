@@ -7,17 +7,17 @@
 
 import UIKit
 
-/// Обработчик событий от `View`
+/// события которые отправляем из View в Presenter
 protocol MainScreenViewOutput: AnyObject {
     
     /// Кнопка была нажата пользователем
     func presentNewScreenButtonAction()
 }
 
-/// `View для экрана MainScreenView`
+/// события которые отправляем от Presenter ко View
 protocol MainScreenViewInput: AnyObject {
     
-    /// Обработчик событий от view экрана MainScreenView
+    /// OUTPUT прокидывает события в PRESENTER
     var output: MainScreenViewOutput? { get set }
     
     /// Изменить цвет фона на Рандомный
