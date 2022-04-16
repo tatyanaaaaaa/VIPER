@@ -18,9 +18,6 @@ protocol MainScreenInteractorOutput: AnyObject {
 /// события которые отправляем от Presenter к Interactor
 protocol MainScreenInteractorInput {
     
-    /// OUTPUT прокидывает события в PRESENTER
-    var output: MainScreenInteractorOutput? { get set }
-    
     /// Загрузить контент
     func getContent()
 }

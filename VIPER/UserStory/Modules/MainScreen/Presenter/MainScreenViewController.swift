@@ -7,35 +7,30 @@
 
 import UIKit
 
-// Нам пока это не надо 🔴 👇
-/// события которые отправляем `из текущего модуля в другой модуль`
-public protocol MainScreenModuleOutput: AnyObject {
+/// события которые отправляем из `ТЕКУЩЕГО МОДУЛЯ` в  `ДРУГОЙ МОДУЛЬ`
+protocol MainScreenModuleOutput: AnyObject {
     
     /// Пользователь нажал `Изменить цвет экрана`
-    /// - Parameters:
-    ///   - color: `Текущий цвет экрана`
+    /// - Parameter color:  для view
     func userPressedChange(color: UIColor?)
 }
 
-/// события которые принимаем `из другого модуля в текущий`
-public protocol MainScreenModuleInput {
+/// события которые отправляем из `ДРУГОГО МОДУЛЯ` в  `ТЕКУЩИЙ МОДУЛЬ`
+protocol MainScreenModuleInput {
     
     /// Обработчик событий от `Главного экрана`
     var moduleOutput: MainScreenModuleOutput? { get set }
 }
-// Нам пока это не надо 🔴 👆
 
 /// Готовый модуль `Главного экрана`
-public typealias MainScreenModule = UIViewController & MainScreenModuleInput
+typealias MainScreenModule = UIViewController & MainScreenModuleInput
 
 /// Главный экран
 final class MainScreenViewController: UIViewController, MainScreenModuleInput {
     
-    // MARK: - Public property
+    // MARK: - Internal property
     
-    // Нам пока это не надо 🔴 👇
-    public weak var moduleOutput: MainScreenModuleOutput?
-    // Нам пока это не надо 🔴 👆
+    weak var moduleOutput: MainScreenModuleOutput?
     
     // MARK: - Private property
     
@@ -88,6 +83,8 @@ extension MainScreenViewController: MainScreenInteractorOutput {
 extension MainScreenViewController: MainScreenViewOutput {
     func presentNewScreenButtonAction() {
         moduleView.changeBackgroundColor()
+        
+        /// Событие пробрасываем `Из зекущего модуля` в `Другой модуль`
         moduleOutput?.userPressedChange(color: view.backgroundColor)
     }
 }

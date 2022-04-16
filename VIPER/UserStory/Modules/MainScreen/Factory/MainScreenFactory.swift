@@ -11,22 +11,15 @@ import UIKit
 protocol MainScreenFactoryOutput: AnyObject {
     
     /// Был получен готовый текст
-    /// - Parameters:
-    /// - text: готовый, сформированный `текст`
+    /// - Parameter text: готовый, сформированный `текст`
     func didReciveFull(text: String)
 }
 
 /// события которые отправляем от Presenter к Factory
 protocol MainScreenFactoryInput {
-    
-    /// OUTPUT прокидывает события в PRESENTER
-    var output: MainScreenFactoryOutput? { get set }
-    
+
     /// Создает секции для отображения
-    /// - Parameters:
-    ///   - text: `вторая часть готового текста`
-    ///   - output: output `MainScreenFactoryOutput`
-    /// - Returns: секции
+    /// - Parameter text: `вторая часть готового текста`
     func createTitle(text: String)
 }
 
